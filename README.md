@@ -22,8 +22,8 @@ You just need to run `main.exe` in the folder, then you need to enter the conten
 
 ## For example
 
-![Alt text](/image/image-1.png)
+![Alt text](/image/README/image-1.png)
 
 ## Get the URL
 
-![Alt text](/image/image-2.png)
+![Alt text](/image/README/image-2.png)
