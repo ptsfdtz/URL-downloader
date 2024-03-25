@@ -1,6 +1,7 @@
 import os
 import sys
 import requests
+import time
 from PyQt5.QtWidgets import QApplication, QWidget, QLabel, QLineEdit, QPushButton, QVBoxLayout, QFileDialog, QProgressBar
 from PyQt5.QtGui import QIcon
 from PyQt5.QtCore import Qt, pyqtSignal, QThread
@@ -23,6 +24,7 @@ class VideoDownloaderUI(QWidget):
         self.browse_button = QPushButton('选择存储路径')
         self.download_button = QPushButton('开始下载')
         self.progress_bar = QProgressBar()
+        self.speed_label = QLabel('下载速度: 0 B/s')  # 新增的标签用于显示下载速度
 
         self.browse_button.clicked.connect(self.browse_directory)
         self.download_button.clicked.connect(self.start_download)
@@ -33,6 +35,7 @@ class VideoDownloaderUI(QWidget):
         layout.addWidget(self.browse_button)
         layout.addWidget(self.download_button)
         layout.addWidget(self.progress_bar)
+        layout.addWidget(self.speed_label)
 
         self.setLayout(layout)
 
@@ -51,26 +54,30 @@ class VideoDownloaderUI(QWidget):
             print("请选择存储路径.")
             return
 
-        # 创建下载线程
-        download_thread = DownloadThread(download_url, self.save_path)
-        # 将线程的进度信号连接到更新UI的槽函数
-        download_thread.progress_signal.connect(self.update_progress)
-        # 启动下载线程
-        download_thread.start()
+        # 如果已经存在下载线程，则不再创建新的线程
+        if hasattr(self, 'download_thread') and self.download_thread.isRunning():
+            print("下载已经在进行中...")
+            return
 
-    def update_progress(self, value):
-        # 更新进度条的值
+        # 如果不存在下载线程，创建并启动下载线程
+        self.download_thread = DownloadThread(download_url, self.save_path)
+        self.download_thread.progress_signal.connect(self.update_progress)
+        self.download_thread.start()
+
+    def update_progress(self, value, speed):
         self.progress_bar.setValue(value)
+        self.speed_label.setText(f'下载速度: {speed} B/s')
 
 
 class DownloadThread(QThread):
-    # 定义一个带有整数参数的自定义信号
-    progress_signal = pyqtSignal(int)
+    progress_signal = pyqtSignal(int, int)
 
     def __init__(self, url, save_path):
         super().__init__()
         self.url = url
         self.save_path = save_path
+        self.start_time = time.time()
+        self.last_downloaded_size = 0
 
     def run(self):
         try:
@@ -82,7 +89,13 @@ class DownloadThread(QThread):
             content_disposition = response.headers.get('Content-Disposition')
             filename = content_disposition.split('filename=')[-1].strip('"') if content_disposition else 'video.mp4'
 
-            self.download_file(self.url, self.save_path, filename)
+            replacement_digit = 1
+            while True:
+                modified_url = self.replace_last_digit(self.url, replacement_digit)
+                success = self.download_file(modified_url, self.save_path, filename)
+                if not success:
+                    break
+                replacement_digit += 1
         except Exception as e:
             print(f"An error occurred: {e}")
 
@@ -95,7 +108,7 @@ class DownloadThread(QThread):
                 print(f"Failed to download file on attempt {attempt + 1}: {e}")
                 if attempt == max_retries - 1:
                     print(f"Max retries reached. Failed to download file: {url}")
-                    return
+                    return False
             else:
                 break
 
@@ -113,15 +126,32 @@ class DownloadThread(QThread):
             for data in response.iter_content(block_size):
                 file.write(data)
                 downloaded_size += len(data)
-                progress_percentage = (downloaded_size / total_size) * 100
-                # 发送进度信号
-                self.progress_signal.emit(int(progress_percentage))
+
+                current_time = time.time()
+                elapsed_time = current_time - self.start_time
+                if elapsed_time > 0:
+                    speed = (downloaded_size - self.last_downloaded_size) / elapsed_time
+                    self.progress_signal.emit(int((downloaded_size / total_size) * 100), int(speed))
+
+                self.last_downloaded_size = downloaded_size
 
         print(f"File downloaded successfully: {full_path}")
+        return True
 
+    @staticmethod
+    def replace_last_digit(url, replacement):
+        last_digit_index = url.rfind('/')
+        if last_digit_index != -1:
+            modified_url = url[:last_digit_index+1] + str(replacement) + url[last_digit_index + 2:]
+            return modified_url
+        else:
+            return url
 
-if __name__ == '__main__':
+def main():
     app = QApplication(sys.argv)
     downloader_ui = VideoDownloaderUI()
     downloader_ui.show()
     sys.exit(app.exec_())
+
+if __name__ == '__main__':
+    main()
