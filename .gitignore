@@ -2,3 +2,4 @@ build
 dist
 main.spec
 release
+main.py
