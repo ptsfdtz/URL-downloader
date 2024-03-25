@@ -1,29 +1,19 @@
-# Downloader
+# 一个可以说是只针对南工在线的下载器
 
-本项目无需安装任何库，下载即可运行
+<!-- main.py 是第一版的下载器，又臭又长我们不多赘述 -->
 
-## Important！！！
+在终端运行
 
-<html>
-    <span style="color:red; font-size:2em;">!</span>
-    <span style="color:red; font-size:2em;">!</span>
-    <span style="color:red; font-size:2em;">!</span>
-</html>
+```
+git clone https://github.com/ptsfdtz/URL-downloader.git
+cd ./URL-downloader
+pip install -r requirments.txt
+```
 
-**If you need to download a large amount of content, please put this repository in a large folder**
+打开南工在线，并且找到你想要下载的内容，按下`F12`
 
-<html>
-    <span style="color:red; font-size:2em;">!</span>
-    <span style="color:red; font-size:2em;">!</span>
-    <span style="color:red; font-size:2em;">!</span>
-</html>
+![image](image/README/image1.png)
 
-You just need to run `main.exe` in the folder, then you need to enter the content you downloaded and the storage path, then you can find the content you want to download in the `disk` folder, and then put it in the folder you need to put it
+将复制的内容粘贴到`API.txt`这个文件中
 
-## For example
-
-![Alt text](/image/README/image-1.png)
-
-## Get the URL
-
-![Alt text](/image/README/image-2.png)
+然后运行`app.py`即可
