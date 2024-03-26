@@ -11,7 +11,7 @@ data_dict = json.loads(content)
 result_dict = {}
 for item in data_dict['data']['list']:
     result_dict[item['name']] = item['path']
-name = input("Enter the name of the file to download: ")
+name = input("输入剧集名称")
 download_folder = name
 os.makedirs(download_folder, exist_ok=True)
 
@@ -30,6 +30,6 @@ for name, url in result_dict.items():
             file.write(data)
             bar.update(len(data))
 
-    print(f"{name} downloaded successfully.")
+    print(f"{name} 下载成功")
 
-print("All files downloaded.")
+print("全部下载完成")
