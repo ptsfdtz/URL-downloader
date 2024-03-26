@@ -11,8 +11,8 @@ data_dict = json.loads(content)
 result_dict = {}
 for item in data_dict['data']['list']:
     result_dict[item['name']] = item['path']
-name = input("输入剧集名称")
-download_folder = name
+print(result_dict[item['name']])
+download_folder = input("输入剧集名称:")
 os.makedirs(download_folder, exist_ok=True)
 
 for name, url in result_dict.items():
