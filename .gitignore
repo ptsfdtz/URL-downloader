@@ -2,4 +2,6 @@ build
 dist
 main.spec
 release
-main.py
+app.spec
+src/__pycache__
+cookie.txt
