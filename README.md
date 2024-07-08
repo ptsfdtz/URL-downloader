@@ -1,4 +1,6 @@
-# 一个只针对南工在线的下载器
+# 一个用于南工在线的下载器
+
+**:exclamation::exclamation::exclamation:<font face="黑体" color=red size=5>本仓库只是用来给同学们离开南工后还能流畅免费的观看一些优秀的视频作品，请勿用于下载传播</font>:exclamation::exclamation::exclamation:**
 
 ```
 git clone https://github.com/ptsfdtz/URL-downloader.git
