@@ -11,20 +11,25 @@ def load_cookies(file_path):
             cookies[name] = value
     return cookies
 
-topic_id = input("请输入剧集Id: ")
+def main():
+    topic_id = input("请输入剧集Id: ")
 
-cookies = load_cookies('cookie.txt')
+    cookies = load_cookies('cookie.txt')
+    data = get_api_data(topic_id, cookies)
 
-data = get_api_data(topic_id, cookies)
+    print("API返回的数据:")
+    print(json.dumps(data, indent=4, ensure_ascii=False))
 
-if data:
     result_dict = parse_api_data(data)
-    
-    print("以下是剧集名称:")
-    for name in result_dict:
-        print(name)
-    
-    download_folder = input("输入剧集名称:")
-    download_videos(result_dict, download_folder)
-else:
-    print("未能获取到数据，请检查网络或API访问权限。")
+    if result_dict:
+        print("以下是剧集名称:")
+        for name in result_dict:
+            print(name)
+
+        download_folder = input("请输入要下载的剧集名称: ")
+        download_videos(result_dict, download_folder)
+    else:
+        print("解析数据失败。")
+
+if __name__ == "__main__":
+    main()

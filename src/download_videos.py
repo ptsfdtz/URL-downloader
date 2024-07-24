@@ -6,9 +6,9 @@ def download_videos(result_dict, download_folder):
     os.makedirs(download_folder, exist_ok=True)
 
     for name, url in result_dict.items():
-        file_path = os.path.join(download_folder, name + '.mkv')
-        print(f"Downloading {name} from {url}...")
+        file_path = os.path.join(download_folder, f"{name}.mkv")
         response = requests.get(url, stream=True)
+        response.raise_for_status()  
         with open(file_path, 'wb') as file, tqdm(
                 desc=name,
                 total=int(response.headers.get('content-length', 0)),

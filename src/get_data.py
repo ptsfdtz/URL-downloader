@@ -1,12 +1,16 @@
 import requests
+import json
+
+def load_config(file_path):
+    with open(file_path, 'r') as file:
+        return json.load(file)
+
+config = load_config('config.json')
 
 def get_api_data(topic_id, cookies):
-    url = f"https://online.njtech.edu.cn/api/v1/url/list?page=1&pageSize=400&topicId={topic_id}&genre=video&sort=asc"
+    url = (
+        f"{config['base_url']}?page={config['page']}&pageSize={config['page_size']}&topicId={topic_id}&genre={config['genre']}&sort={config['sort']}"
+    )
     response = requests.get(url, cookies=cookies)
-
-    if response.status_code == 200:
-        data = response.json()
-        return data
-    else:
-        print(f"Failed to retrieve data. HTTP Status code: {response.status_code}")
-        return None
+    response.raise_for_status()  
+    return response.json()
