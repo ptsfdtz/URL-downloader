@@ -6,6 +6,7 @@
 git clone https://github.com/ptsfdtz/URL-downloader.git
 cd ./URL-downloader
 pip install -r requirments.txt
+notepad cookie.txt
 ```
 
 在根目录下新建一个`cookie.txt`文件
