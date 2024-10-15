@@ -1,0 +1,84 @@
+{
+  "$schema": "https://online.njtech.edu.cn/api/v2/schemas/VideoSeason.json",
+  "id": "66dab1128c22cc7946b66d41",
+  "createdAt": 0,
+  "updatedAt": 0,
+  "name": null,
+  "status": 0,
+  "isCloseComment": 0,
+  "playCount": 0,
+  "episodes": [
+    {
+      "id": "6702ce7d94cb08aa5ca0b1bd",
+      "index": 1,
+      "title": "第1集",
+      "url": "https://data2online.njtech.edu.cn/media/anime/动漫/不时用俄语小声说真心话的邻桌艾莉同学 (2024)/Season 1/不时用俄语小声说真心话的邻桌艾莉同学 - S01E01 - 1080p - WEB-DL - X264 - AAC - Baha.mp4"
+    },
+    {
+      "id": "6702ce7d94cb08aa5ca0b1be",
+      "index": 2,
+      "title": "第2集",
+      "url": "https://data2online.njtech.edu.cn/media/anime/动漫/不时用俄语小声说真心话的邻桌艾莉同学 (2024)/Season 1/不时用俄语小声说真心话的邻桌艾莉同学 - S01E02 - 1080p - WEB-DL - X264 - AAC - Baha.mp4"
+    },
+    {
+      "id": "6702ce7d94cb08aa5ca0b1bf",
+      "index": 3,
+      "title": "第3集",
+      "url": "https://data2online.njtech.edu.cn/media/anime/动漫/不时用俄语小声说真心话的邻桌艾莉同学 (2024)/Season 1/不时用俄语小声说真心话的邻桌艾莉同学 - S01E03 - 1080p - WEB-DL - X264 - AAC - Baha.mp4"
+    },
+    {
+      "id": "6702ce7d94cb08aa5ca0b1c0",
+      "index": 4,
+      "title": "第4集",
+      "url": "https://data2online.njtech.edu.cn/media/anime/动漫/不时用俄语小声说真心话的邻桌艾莉同学 (2024)/Season 1/不时用俄语小声说真心话的邻桌艾莉同学 - S01E04 - 1080p - WEB-DL - X264 - AAC - Baha.mp4"
+    },
+    {
+      "id": "6702ce7d94cb08aa5ca0b1c1",
+      "index": 5,
+      "title": "第5集",
+      "url": "https://data2online.njtech.edu.cn/media/anime/动漫/不时用俄语小声说真心话的邻桌艾莉同学 (2024)/Season 1/不时用俄语小声说真心话的邻桌艾莉同学 - S01E05 - 1080p - WEB-DL - X264 - AAC - Baha.mp4"
+    },
+    {
+      "id": "6702ce7d94cb08aa5ca0b1c2",
+      "index": 6,
+      "title": "第6集",
+      "url": "https://data2online.njtech.edu.cn/media/anime/动漫/不时用俄语小声说真心话的邻桌艾莉同学 (2024)/Season 1/不时用俄语小声说真心话的邻桌艾莉同学 - S01E06 - 1080p - WEB-DL - X264 - AAC - Baha.mp4"
+    },
+    {
+      "id": "6702ce7d94cb08aa5ca0b1c3",
+      "index": 7,
+      "title": "第7集",
+      "url": "https://data2online.njtech.edu.cn/media/anime/动漫/不时用俄语小声说真心话的邻桌艾莉同学 (2024)/Season 1/不时用俄语小声说真心话的邻桌艾莉同学 - S01E07 - 1080p - WEB-DL - X264 - AAC - Baha.mp4"
+    },
+    {
+      "id": "6702ce7d94cb08aa5ca0b1c4",
+      "index": 8,
+      "title": "第8集",
+      "url": "https://data2online.njtech.edu.cn/media/anime/动漫/不时用俄语小声说真心话的邻桌艾莉同学 (2024)/Season 1/不时用俄语小声说真心话的邻桌艾莉同学 - S01E08 - 1080p - WEB-DL - X264 - AAC - Baha.mp4"
+    },
+    {
+      "id": "6702ce7d94cb08aa5ca0b1c5",
+      "index": 9,
+      "title": "第9集",
+      "url": "https://data2online.njtech.edu.cn/media/anime/动漫/不时用俄语小声说真心话的邻桌艾莉同学 (2024)/Season 1/不时用俄语小声说真心话的邻桌艾莉同学 - S01E09 - 1080p - WEB-DL - X264 - AAC - Baha.mp4"
+    },
+    {
+      "id": "6702ce7d94cb08aa5ca0b1c6",
+      "index": 10,
+      "title": "第10集",
+      "url": "https://data2online.njtech.edu.cn/media/anime/动漫/不时用俄语小声说真心话的邻桌艾莉同学 (2024)/Season 1/不时用俄语小声说真心话的邻桌艾莉同学 - S01E10 - 1080p - WEB-DL - X264 - AAC - Baha.mp4"
+    },
+    {
+      "id": "6702ce7d94cb08aa5ca0b1c7",
+      "index": 11,
+      "title": "第11集",
+      "url": "https://data2online.njtech.edu.cn/media/anime/动漫/不时用俄语小声说真心话的邻桌艾莉同学 (2024)/Season 1/不时用俄语小声说真心话的邻桌艾莉同学 - S01E11 - 1080p - WEB-DL - X264 - AAC - Baha.mp4"
+    },
+    {
+      "id": "6702ce7d94cb08aa5ca0b1c8",
+      "index": 12,
+      "title": "第12集",
+      "url": "https://data2online.njtech.edu.cn/media/anime/动漫/不时用俄语小声说真心话的邻桌艾莉同学 (2024)/Season 1/不时用俄语小声说真心话的邻桌艾莉同学 - S01E12 - 1080p - WEB-DL - X264 - AAC - Baha.mp4"
+    }
+  ]
+}

@@ -1,7 +1,7 @@
 import json
-from get_data import get_api_data
-from parse_data import parse_api_data
-from download_videos import download_videos
+from src.get_data import get_api_data
+from src.parse_data import parse_api_data
+from src.download_videos import download_videos
 
 def load_cookies(file_path):
     cookies = {}
