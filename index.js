@@ -28,6 +28,9 @@ async function fetchData(videoId) {
         const seasonData = await getData(apiUrl, token);
 
         fs.writeFileSync('api.json', JSON.stringify(seasonData, null, 2));
+        // console.log(seasonData.episodes)
+        const urls = seasonData.episodes.map(episode => episode.url)
+        console.log(urls)
         console.log('数据已成功保存到 api.json');
 
     } catch (error) {
