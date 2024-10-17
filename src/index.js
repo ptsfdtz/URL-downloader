@@ -20,7 +20,8 @@ async function getData(url, token) {
 }
 
 async function fetchData(videoId) {
-    const token = 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJhdWQiOlsiTkpURUNIIl0sImV4cCI6MTcyOTM0Mjg0MCwiaWF0IjoxNzI4NzM4MDQwLCJpc3MiOiJNQVJTIiwicmxlIjoidXNlciIsInN1YiI6IjIwMjIyMTAxOTA4MSIsInVpZCI6IjY2ZDA3MmY3OTk3ZWJjYzY1NGEwMmMwNyJ9.Omtptc0i9OxJbj0Lw7x5a8H4ZIrqOJ4kfp503QwcFAo';
+    const config = JSON.parse(fs.readFileSync('config.json', 'utf8'));
+    const token = config.online_token;
     const url = `https://online.njtech.edu.cn/api/v2/videos/${videoId}?id=${videoId}`;
 
     try {
@@ -32,7 +33,6 @@ async function fetchData(videoId) {
         const encodedUrls = await Promise.all(urls.map(encodeUrlPartially));
 
         fs.writeFileSync('urls.txt', encodedUrls.join('\n'), 'utf8');
-        // console.log(encodedUrls.join('\n'));
     } catch (error) {
         console.error(error);
     }
