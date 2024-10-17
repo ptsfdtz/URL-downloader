@@ -1,6 +1,12 @@
 const fs = require('fs');
 const readline = require('readline');
 
+function encodeUrlPartially(url) {
+    return url.replace(/ /g, '%20')  // 编码空格
+        .replace(/\(/g, '%28')  // 编码左括号
+        .replace(/\)/g, '%29'); // 编码右括号
+}
+
 async function getData(url, token) {
     const response = await fetch(url, {
         method: 'GET',
@@ -9,10 +15,6 @@ async function getData(url, token) {
             'Cookie': `online_token=${token}`
         }
     });
-
-    if (!response.ok) {
-        throw new Error(`Failed to fetch data from ${url}: ${response.statusText}`);
-    }
 
     return response.json();
 }
@@ -26,13 +28,11 @@ async function fetchData(videoId) {
         const apiUrl = `https://online.njtech.edu.cn/api/v2/video_seasons/${data.seasons[0]["id"]}?order=asc&orderBy=index`;
 
         const seasonData = await getData(apiUrl, token);
+        const urls = seasonData.episodes.map(episode => episode.url);
+        const encodedUrls = await Promise.all(urls.map(encodeUrlPartially));
 
-        fs.writeFileSync('api.json', JSON.stringify(seasonData, null, 2));
-        // console.log(seasonData.episodes)
-        const urls = seasonData.episodes.map(episode => episode.url)
-        console.log(urls)
-        console.log('数据已成功保存到 api.json');
-
+        fs.writeFileSync('urls.txt', encodedUrls.join('\n'), 'utf8');
+        // console.log(encodedUrls.join('\n'));
     } catch (error) {
         console.error(error);
     }

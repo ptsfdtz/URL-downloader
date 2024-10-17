@@ -1,7 +1,0 @@
-build
-dist
-main.spec
-release
-app.spec
-src/__pycache__
-cookie.txt

@@ -1,7 +1,0 @@
-{
-    "base_url": "https://online.njtech.edu.cn/api/v1/url/list",
-    "page": 1,
-    "page_size": 400,
-    "genre": "video",
-    "sort": "asc"
-}
