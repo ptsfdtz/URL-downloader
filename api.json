@@ -1,66 +1,24 @@
 {
   "$schema": "https://online.njtech.edu.cn/api/v2/schemas/VideoSeason.json",
-  "id": "66c5612f997ebcc654a18bdc",
-  "createdAt": 1724211503000,
-  "updatedAt": 1724936818000,
+  "id": "670aa41d756a4320eec5492e",
+  "createdAt": 0,
+  "updatedAt": 0,
   "name": null,
   "status": 0,
   "isCloseComment": 0,
   "playCount": 0,
   "episodes": [
     {
-      "id": "66f6b97025ac1449cd4c7d48",
+      "id": "670aa41d756a4320eec5492f",
       "index": 1,
-      "title": "剑来 - S01E01 - 1080p - WEB-DL - H264 - AAC",
-      "url": "https://data2online.njtech.edu.cn/media/anime/国漫/剑来 (2024)/Season 1/剑来 - S01E01 - 1080p - WEB-DL - H264 - AAC.mp4"
+      "title": "第1集",
+      "url": "https://data2online.njtech.edu.cn/media/anime/动漫/Re：从零开始的异世界生活 (2016)/Season 3/Re：从零开始的异世界生活 - S03E01 - 1080p - WEB-DL - X264 - AAC - Baha.mp4"
     },
     {
-      "id": "66f6b97025ac1449cd4c7d49",
+      "id": "670aa41d756a4320eec54930",
       "index": 2,
-      "title": "剑来 - S01E02 - 1080p - WEB-DL - H264 - AAC",
-      "url": "https://data2online.njtech.edu.cn/media/anime/国漫/剑来 (2024)/Season 1/剑来 - S01E02 - 1080p - WEB-DL - H264 - AAC.mp4"
-    },
-    {
-      "id": "66f6b97025ac1449cd4c7d4a",
-      "index": 3,
-      "title": "剑来 - S01E03 - 1080p - WEB-DL - H264 - AAC",
-      "url": "https://data2online.njtech.edu.cn/media/anime/国漫/剑来 (2024)/Season 1/剑来 - S01E03 - 1080p - WEB-DL - H264 - AAC.mp4"
-    },
-    {
-      "id": "66f6b97025ac1449cd4c7d4b",
-      "index": 4,
-      "title": "剑来 - S01E04 - 1080p - WEB-DL - H264 - AAC",
-      "url": "https://data2online.njtech.edu.cn/media/anime/国漫/剑来 (2024)/Season 1/剑来 - S01E04 - 1080p - WEB-DL - H264 - AAC.mp4"
-    },
-    {
-      "id": "66f6b97025ac1449cd4c7d4c",
-      "index": 5,
-      "title": "剑来 - S01E05 - 1080p - WEB-DL - H264 - AAC",
-      "url": "https://data2online.njtech.edu.cn/media/anime/国漫/剑来 (2024)/Season 1/剑来 - S01E05 - 1080p - WEB-DL - H264 - AAC.mp4"
-    },
-    {
-      "id": "66f6b97025ac1449cd4c7d4d",
-      "index": 6,
-      "title": "剑来 - S01E06 - 1080p - WEB-DL - H264 - AAC",
-      "url": "https://data2online.njtech.edu.cn/media/anime/国漫/剑来 (2024)/Season 1/剑来 - S01E06 - 1080p - WEB-DL - H264 - AAC.mp4"
-    },
-    {
-      "id": "66f6b97025ac1449cd4c7d4e",
-      "index": 7,
-      "title": "剑来 - S01E07 - 1080p - WEB-DL - H264 - AAC",
-      "url": "https://data2online.njtech.edu.cn/media/anime/国漫/剑来 (2024)/Season 1/剑来 - S01E07 - 1080p - WEB-DL - H264 - AAC.mp4"
-    },
-    {
-      "id": "66f6b97025ac1449cd4c7d4f",
-      "index": 8,
-      "title": "剑来 - S01E08 - 1080p - WEB-DL - H264 - AAC",
-      "url": "https://data2online.njtech.edu.cn/media/anime/国漫/剑来 (2024)/Season 1/剑来 - S01E08 - 1080p - WEB-DL - H264 - AAC.mp4"
-    },
-    {
-      "id": "66f6b97025ac1449cd4c7d50",
-      "index": 9,
-      "title": "剑来 - S01E09 - 1080p - WEB-DL - H264 - AAC",
-      "url": "https://data2online.njtech.edu.cn/media/anime/国漫/剑来 (2024)/Season 1/剑来 - S01E09 - 1080p - WEB-DL - H264 - AAC.mp4"
+      "title": "第2集",
+      "url": "https://data2online.njtech.edu.cn/media/anime/动漫/Re：从零开始的异世界生活 (2016)/Season 3/Re：从零开始的异世界生活 - S03E02 - 1080p - WEB-DL - X264 - AAC - Baha.mp4"
     }
   ]
 }
